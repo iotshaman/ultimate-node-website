@@ -18,7 +18,7 @@ module.exports.initialize = function(app) {
         styles: [ "assets/**/*.css" ],
         defaults: {
             title: "Ultimate Node Website",
-            description: "",
+            description: "A Node JS website template, built with SEO in mind. Get your website up and running in minutes, guaranteed fast response times and high base-line SEO scores.",
             twitter_user: "@twitter"
         },
         isProd: !!process.env.PROD_FLAG,
