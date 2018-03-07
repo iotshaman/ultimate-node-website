@@ -1,7 +1,7 @@
 {
   "name": "ultimate-node-website",
   "version": "1.0.0",
-  "description": "This library is currently under initial development, please come back shortly.",
+  "description": "A Node JS website template, built with SEO in mind. Get your website up and running in minutes, guaranteed fast response times and high base-line SEO scores.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
