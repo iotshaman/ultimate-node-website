@@ -1,0 +1,7 @@
+{
+    "hostname": "http://www.your-domain.name.com",
+    "cacheTime": 600000,
+    "urls": [
+      { "url": "/" }
+    ]
+  }

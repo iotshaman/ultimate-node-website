@@ -1,0 +1,204 @@
+/* MAIN BODY */
+.body {
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    height: calc(100% - 50px);
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1;
+}  
+.min-body-height {
+    min-height: calc(100vh - 175px);
+}
+
+/* MAIN HEADER */
+.header {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    border-bottom: 1px solid white;
+}
+.header .site-name {
+    padding: 10px 25px 10px 0px;
+    color: white;
+    display: inline-block;
+}
+.header .site-name a {
+    color: white;
+}
+.header .site-logo {        
+    display: inline-block;
+    padding: 10px 5px 10px 15px;
+}
+.header .site-logo img {
+    width: 25px;
+    height: auto;
+    margin: 0px 10px 5px;
+}
+.header .desktop-links {
+    display: inline-block;
+    padding: 2px;
+}
+.header .mobile-links {
+    float: right;
+    padding: 2px;
+}
+.header .menu-item, .header .mobile-menu-item {
+    padding: 10px 20px;
+    height: 100%;
+    color: white;
+    display: inline-block;
+    background-color: #151515;
+    margin-left: -5px;
+    border-left: 2px solid black;
+}
+.header .mobile-menu-item {
+    cursor: pointer;
+}
+.header .menu-item a {
+    color: white;
+}
+.header .menu-item.active, .mobile-menu-dropdown ul li.active {        
+    background-color: #2B2B2B;
+}
+.mobile-menu-dropdown {
+    display: none;
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    width: 100%;
+    background-color: black;
+    z-index: 11;
+}
+.mobile-menu-dropdown.show {
+    display: inline-block !important;
+}
+.mobile-menu-dropdown ul {
+    list-style-type: none;
+    width: 100%;
+    padding: 0px;
+    margin-bottom: 0px;
+}
+.mobile-menu-dropdown ul li {
+    border-bottom: 1px solid white;
+}
+.mobile-menu-dropdown ul li a {
+    color: white;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* MAIN FOOTER */
+.footer {
+    text-align: center;
+    min-height: 125px;
+    background-color: #222;
+    border-top: 3px solid white;
+    padding: 20px;
+    color: white;
+}
+
+/* SOCIAL BAR */
+.social-bar {
+    font-size: .75em;
+    display: block;
+}
+.social-bar ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.social-bar ul li {
+    display: inline-block;
+    padding: 10px;
+}
+.social-bar ul li a i {
+    color: white;
+    font-size: 2em;
+}
+
+/* SPLIT BUTTON */
+.split-button-container .dropdown-menu > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+}
+.split-button-container .dropdown-menu > li:hover {
+    background-color: #c1c1c1;
+}
+.split-button-container .dropdown-menu > li > a > i{
+    margin-right: 10px;
+    width: 15px;
+}
+
+/* FONTS */
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Orbitron Regular'), local('Orbitron-Regular'), url(https://fonts.gstatic.com/s/orbitron/v9/yMJRMIlzdpvBhQQL_Qq7dy0.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* BOOTSTRAP OVERRIDES */
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+/* MEDIA QUERIES */
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 575px) { 
+    .sm-hide {
+        display: none !important;
+    }
+    .sm-show {
+        display: inline-block !important;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 767px) { 
+    .md-hide {
+        display: none !important;
+    }
+    .md-show {
+        display: inline-block !important;
+    }
+    .md-text-center {
+        text-align: center;
+    }
+}
+@media (min-width: 768px) {
+    body .mobile-menu-dropdown.show {
+        display: none !important;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 991px) {  
+    .lg-hide {
+        display: none !important;
+    }
+    .lg-show {
+        display: inline-block !important;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (max-width: 1199px) {      
+    .xl-show {
+        display: inline-block !important;
+    }
+}

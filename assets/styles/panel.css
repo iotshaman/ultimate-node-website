@@ -1,0 +1,83 @@
+.panel-page {
+    background: url('/images/texture.png');
+}
+.panel-container {
+    padding: 50px 0;
+}
+.panel-container .title-row {
+    width: 98%;
+    margin: 0 auto;
+    padding: 30px 0;
+    border: 1px solid white;
+    border-bottom: 0;
+    border-radius: 20px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: white;
+    color: black;
+}
+.panel-container .title-row h1 {
+    font-family: 'Orbitron', sans-serif;
+    padding-left: 20px;
+}
+.panel-container .panel-body {
+    width: 98%;
+    margin: 0 auto;
+    padding-top: 30px;
+    border: 1px solid white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: url(/images/bgtile.png) !important;
+}
+.panel-container .panel-body .panel-row {
+    min-height: 240px;
+    width: 96%;
+    margin: 30px auto;
+    background-color: #333;
+    border: 1px solid #333;
+    border-radius: 10px;
+    color: white;
+}
+.panel-container .panel-body .panel-row:nth-of-type(1) {
+    margin-top: 0px;
+}
+.panel-container .panel-body .panel-row .col-md-8 {
+    padding: 30px;
+}
+.panel-container .panel-body .panel-row .col-md-8 h2,
+.panel-container .panel-body .panel-row .col-md-8 a {
+    display: inline-block;
+    cursor: pointer;
+}
+.panel-container .panel-body .panel-row .col-md-8 a i {
+    font-size: 1.2em;
+    margin: 0px 5px 0px 10px;
+}
+.panel-container .panel-body .panel-row .col-md-4 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.panel-container .panel-body .panel-row .col-md-4 img {
+    max-height: 180px; 
+    margin: 0 auto;
+}
+.panel-container .title-row .col-md-4 .split-button-container {
+    margin-top: 1.2rem;
+    margin-right: 20px;
+    float: right;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 767px) { 
+    .panel-container {
+        padding: 25px 0;
+    }    
+    .panel-container .panel-body .panel-row .col-md-4 img {
+        margin-bottom: 50px;
+    }
+    .panel-container .title-row .col-md-4 .split-button-container {
+        float: left;
+        margin: 0px 0px 0px 20px;
+    }
+}

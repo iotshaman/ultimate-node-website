@@ -1,0 +1,29 @@
+<div class="header">
+    <div class="site-logo">
+        <img src="/images/iotlogowhite.svg" alt="IoT Shaman - Unlocking the Mysteries of IoT">
+    </div>
+    <div class="site-name">
+        <a href="/">IoT Shaman</a>
+    </div>
+    <div class="md-hide desktop-links">
+        <div class="menu-item {{#equals pageLink 'home'}}active{{/equals}}">
+            <a href="/">Home</a>
+        </div>
+    </div>
+    <div class="mobile-links">
+        <div data-tag="mobile-menu-btn" class="mobile-menu-item md-show" style="display: none">
+            <a href="javascript:void(0)" onclick="return false;">
+                <i class="fa fa-bars" style="color: white;"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="mobile-menu-dropdown">
+    <div class="row">
+        <ul>
+            <li class="{{#equals pageLink 'home'}}active{{/equals}}">
+                <a href="/">Home</a>
+            </li>
+        </ul>
+    </div>
+</div>
