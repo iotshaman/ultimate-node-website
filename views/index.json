@@ -5,5 +5,7 @@
     "og_url": "https://www.your-domain-name.com",
     "og_image": "https://avatars3.githubusercontent.com/u/34755072?s=460&v=4",
     "pageLink": "home",
-    "route": "/"
+    "route": "/",
+    "sectionTitle": "Ultimate Node Website",
+    "sectionBody": "Welcome to your very own website. For more information on how to build on top of this, please visit our <a href='https://github.com/iotshaman/ultimate-node-website'>Gitub Page</a>"
 }

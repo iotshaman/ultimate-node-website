@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- THE BELOW CODE IS HANDLEBARS SYNTAX FOR A PARTIAL FILE REFERENCE -->
     {{> views/meta-tags/meta-tags.partial.html }}
+    <!-- HANDLEBARS SECTIONS STARTING WITH $ DENOTE A BUILT-IN COMPILER DIRECTIVE (SEE GITHUB) -->
     {{> $.tags }}
     {{> $.styles }}
     {{> views/tag-partials/font-awesome.partial.html }}
@@ -14,11 +16,9 @@
             <div class="row">
                 <div class="col-md-6" style="color: white; text-align: left;">
                     <div class="content-section">
-                        <h2>Ultimate Node Website</h2>
+                        <h2>{{ sectionTitle }}</h2>
                         <p>
-                            Welcome to your very own website. For more information on how to build 
-                            on top of this, please visit our 
-                            <a href="https://github.com/iotshaman/ultimate-node-website">Gitub Page</a>
+                            {{{ sectionBody }}}
                         </p>
                         {{> views/social-bar/social-bar-lg.partial.html }}
                     </div>
