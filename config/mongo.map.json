@@ -1,0 +1,7 @@
+{
+    "mongo_server": true,
+    "mongo_port": true,
+    "mongo_user": true,
+    "mongo_pass": true,
+    "mongo_database": true
+}

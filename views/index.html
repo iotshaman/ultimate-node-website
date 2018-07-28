@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <!-- THE BELOW CODE IS HANDLEBARS SYNTAX FOR A PARTIAL FILE REFERENCE -->
-    {{> views/meta-tags/meta-tags.partial.html }}
+    {{> views/common/meta-tags/meta-tags.partial.html }}
     <!-- HANDLEBARS SECTIONS STARTING WITH $ DENOTE A BUILT-IN COMPILER DIRECTIVE (SEE GITHUB) -->
     {{> $.tags }}
     {{> $.styles }}
-    {{> views/tag-partials/font-awesome.partial.html }}
+    {{> views/common/tag-partials/font-awesome.partial.html }}
     {{> $.scripts }}
 </head>
 <body>
-    {{> views/header/header.partial.html }}
+    {{> views/common/layout/header/header.partial.html }}
     <div class="body">
         <div class="above-the-fold min-body-height">
             <div class="row">
@@ -20,7 +20,7 @@
                         <p>
                             {{{ sectionBody }}}
                         </p>
-                        {{> views/social-bar/social-bar-lg.partial.html }}
+                        {{> views/common/social-bar/social-bar-lg.partial.html }}
                     </div>
                 </div> 
                 <div class="col-md-6">
@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        {{> views/footer/footer.partial.html }}
+        {{> views/common/layout/footer/footer.partial.html }}
     </div>
 </body>
 </html>

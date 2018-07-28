@@ -118,7 +118,7 @@ Another thing you might notice about the starter kit is that each HTML file in t
 }
 ```
 
-When this the server is started and the templates are compiled, the server will then return the following value when the page is requested:
+When the server is started and the templates are compiled, the server will then return the following value when the page is requested:
 
 ```html
 ...
