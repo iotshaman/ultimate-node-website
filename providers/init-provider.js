@@ -49,8 +49,6 @@ function loadInitialMethods() {
             var transformData = transformProvider(runtime);
             return viewProvider.initialize(runtime.app, transformData).then(function(rslt) {
                 runtime.routes = rslt.routes;
-                require('../controllers/sitemap-controller')(runtime);
-                require('../controllers/error-controller')(runtime);
                 return runtime;
             });
         },
@@ -70,6 +68,8 @@ function loadInitialMethods() {
         router: function(runtime) {
             console.log('Generating API Routes...');
             require('./api-route-provider')(runtime.app);
+            require('../controllers/sitemap-controller')(runtime);
+            require('../controllers/error-controller')(runtime);
             return runtime;
         }
     }
