@@ -1,29 +1,28 @@
-var ShamanCompiler = require('shaman-website-compiler').ShamanWebsiteCompiler;
-var nodePath = require('path');
+let nodePath = require('path');
+let ShamanCompiler = require('shaman-website-compiler').CompilerFactory;
+let handlebarsProvider = require('./handlebars-provider');
+let Promise = require('promise');
 
-module.exports.initialize = function(app, transform) {
-    var compiler = new ShamanCompiler({
-        cwd: nodePath.join(__dirname, '..'),
-        partials: [ "views/**/*.partial.html" ],
-        pages: [ "views/**/*.html", "!views/**/*.partial.html" ],
-        scripts: [ "assets/**/*.js" ],
-        styles: [ "assets/**/*.css" ],
-        defaults: {
-            title: "Ultimate Node Website",
-            description: "A Node JS website template, built with SEO in mind. Get your website up and running in minutes, guaranteed fast response times and high base-line SEO scores.",
-            twitter_user: "@twitter"
-        },
-        isProd: !!process.env.PROD_FLAG,
-        wwwRoot: 'views/',
-        noHtmlSuffix: true,
-        autoWatch: !process.env.PROD_FLAG,
-        transformModels: transform,
-        cacheIntervals: {
-            '*': 1296000000,
-            'text/html': 172800000
-        },
-        handlebarsHelpers: require('./handlebars-provider').partials()
+module.exports.initialize = function(runtime) {
+  return new Promise((res, err) => {
+    let cwd = nodePath.join(__dirname, '..', 'src');
+    var compiler = ShamanCompiler({
+      cwd: cwd,
+      isProd: !!runtime.isProd,
+      autoWatch: !runtime.isProd,
+      htmlRoot: 'views/',
+      dropHtmlSuffix: true,
+      minify: false,
+      sitemap: { hostname: 'https://www.iotshaman.com' },
+      handlebarsPlugin: handlebarsProvider.registerHandlebarsHelpers,
     });
-    app.use('/', compiler.router);
-    return compiler.compile();
+    compiler.onCompileEnd = (rslt) => {
+      var diff = Math.abs(rslt.data.startTime - rslt.data.endTime);
+      console.log(`Compile Time (ms): ${diff}`)
+      runtime.app.use('/', rslt.router.Express);
+      res();
+    }
+    compiler.onCompileError = (error) => { err(error); }
+    compiler.Compile();
+  });
 }

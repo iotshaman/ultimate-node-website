@@ -1,0 +1,33 @@
+<div class="split-button-container">
+    <div class="btn-group">
+        <button type="button" class="btn btn-info">
+            <i class="fa fa-share-alt" style="margin-right: 10px;"></i>
+            Share
+        </button>
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" 
+            aria-haspopup="true" aria-expanded="false">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="{{{ share-link 'facebook' 'https://www.iotshaman.com' model.route model.description }}}"
+                    target="_blank">
+                    <i class="fab fa-facebook"></i>Facebook
+                </a>
+            </li>
+            <li>
+                <a href="{{{ share-link 'twitter' 'https://www.iotshaman.com' model.route model.description }}}"
+                    target="_blank">
+                    <i class="fab fa-twitter"></i>Twitter
+                </a>
+            </li>
+            <li>
+                <a href="{{{ share-link 'pinterest' 'https://www.iotshaman.com' model.route model.description }}}"
+                    target="_blank">
+                    <i class="fab fa-pinterest"></i>Pinterest
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

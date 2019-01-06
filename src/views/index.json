@@ -1,0 +1,35 @@
+{
+    "title": "Ultimate Node Website - by IoT Shaman",
+    "description": "A Node JS website template, built with SEO in mind. Get your website up and running in minutes, guaranteed fast response times and high base-line SEO scores.",
+    "og_type": "website",
+    "og_url": "https://www.your-domain-name.com",
+    "og_image": "https://avatars3.githubusercontent.com/u/34755072?s=460&v=4",
+    "pageLink": "home",
+    "route": "/",
+    "sectionTitle": "Ultimate Node Website",
+    "sectionBody": "Welcome to your very own website. For more information on how to build on top of this, please visit our <a href='https://github.com/iotshaman/ultimate-node-website'>Gitub Page</a>",
+    "shaman": {
+      "bundles": [
+        {
+          "name": "index.styles.bundle",
+          "type": "css",
+          "files": [
+            "assets/styles/bootstrap-4.0.css",
+            "assets/styles/index.css",
+            "assets/styles/main.css",
+            "assets/styles/normalize.css"
+          ]
+        },
+        {
+          "name": "index.scripts.bundle",
+          "type": "js",
+          "files": [
+            "assets/scripts/_jquery-3.3.1.js",
+            "assets/scripts/_tether-1.2.4.js",
+            "assets/scripts/bootstrap-4.0.js",
+            "assets/scripts/main.js"
+          ]
+        }
+      ]
+    }
+}

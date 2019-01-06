@@ -1,3 +1,3 @@
-module.exports = function(app) {
-    app.use('/api/env/rebuild', require('../controllers/rebuild-controller'));
+module.exports = function(runtime) {
+    require('../controllers/error-controller')(runtime);
 }

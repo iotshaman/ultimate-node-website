@@ -2,7 +2,8 @@
     "title": "404 - IoT Shaman",
     "description": "If you are seeing this page something went wrong. Please check the url and try again. If this issue persists please reach out on social media.",
     "og_type": "website",
-    "og_url": "https://www.your-domain-name.com/unknown_error",
+    "og_url": "https://www.iotshaman.com/unknown_error",
     "og_image": "https://avatars3.githubusercontent.com/u/34755072?s=460&v=4",
+    "pageLink": "unknown-error",
     "route": "/unknown_error"
 }

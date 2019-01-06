@@ -1,22 +1,65 @@
-var moment = require('moment');
-
-module.exports.partials = function() {
-    return function(handlebars) {
-        handlebars.registerHelper('moment', function(date, format, options) {
-            let rslt = moment(new Date(date)).format(format);
-            return rslt;
-        });
-        handlebars.registerHelper('sample', function(text, length, suffix, options) {
-            if (!text || !text.length) { return ''; }
-            if (text.length <= length) { return text; }
-            return `${text.substring(0, length)}.....${!suffix ? '' : suffix}`;
-        });
-        handlebars.registerHelper('gt', function(item1, item2, options) {
-            if (item1 > item2) {
-                return options.fn(this);
-            } else {
-                return options.inverse(this);
-            }
-        });
+module.exports.registerHandlebarsHelpers = function(handlebars, compilerData) {
+  handlebars.registerHelper('raw-block', function(options) {
+    return options.fn(this);
+  });
+  handlebars.registerHelper('equals', function(item1, item2, options) {
+    if (item1 == item2) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+  }
+  });
+  handlebars.registerHelper('isNullOrEmpty', function(item, options) {
+    if (!item) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
     }
+  });
+  handlebars.registerHelper('isNotNullOrEmpty', function(item, options) {
+    if (!!item) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
+  });
+  handlebars.registerHelper('truncate', function(item, length, options) {
+    if (!item || !item.length) { return ''; }
+    let safeLength = parseInt(length, 10);
+    if (safeLength == NaN || item.length <= safeLength) { return item; }
+    return item.substring(0, safeLength);
+  });
+  handlebars.registerHelper('filter', function(array, prop, expect, options) {
+    var rslt = array.filter(function(val) {
+      return val[prop] == expect;
+    });
+    return rslt.map(function(val) {
+      return options.fn(val);
+    });
+  });
+  handlebars.registerHelper('share-link', function(type, root, route, desc, options) {
+    if (!type || !root || !route) { return ''; }
+    var rslt = '#';
+    var uriStart = encodeURI(`${root}${route}`);
+    var uriSuffix = encodeURI(desc ? desc : '');
+    switch (type) {
+      case 'twitter': {
+        rslt = `https://twitter.com/intent/tweet?url=${uriStart}&text=${uriSuffix}`;
+        break;
+      }
+      case 'facebook': {
+        rslt = `https://www.facebook.com/sharer/sharer.php?u=${uriStart}`;
+        break;
+      }
+      case 'google': {
+        rslt = `https://plus.google.com/share?url=${uriStart}`;
+        break;
+      }
+      case 'pinterest': {
+        rslt = `http://pinterest.com/pin/create/button/?url=${uriStart}&description=${uriSuffix}`
+        break;
+      }
+    }
+    return rslt;
+  });
 }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> partials/meta/common-tags.partial.html }}
+    {{> partials/meta/meta-props.partial.html }}
+    {{{bundles model.shaman.bundles}}}
+    {{> partials/meta/font-awesome.partial.html }}
+    {{> partials/meta/google-analytics.partial.html }}
+</head>
+<body>
+    {{> partials/layout/header.partial.html }}
+    <div class="body">
+        <div class="above-the-fold min-body-height">
+            <div class="row">
+                <div class="col-md-6" style="color: white; text-align: left;">
+                    <div class="content-section">
+                        <h2>{{ model.sectionTitle }}</h2>
+                        <p>{{{ model.sectionBody }}}</p>
+                        {{> partials/social/social-bar-lg.partial.html }}
+                    </div>
+                </div> 
+                <div class="col-md-6">
+                    <img src="images/iotlogowhite.svg" alt="IoT Shaman - Unlocking the Mysteries of IoT">
+                    <h1>IoT Shaman</h1>
+                </div>
+            </div>
+        </div>
+        {{> partials/layout/footer.partial.html }}
+    </div>
+</body>
+</html>

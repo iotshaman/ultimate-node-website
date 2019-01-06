@@ -87,25 +87,23 @@ If you open the file 'views/index.html' you will notice the header element looks
 
 ```html
 <head>
-    <!-- THE BELOW CODE IS HANDLEBARS SYNTAX FOR A PARTIAL FILE REFERENCE -->
-    {{> views/meta-tags/meta-tags.partial.html }}
-    <!-- HANDLEBARS SECTIONS STARTING WITH $ DENOTE A BUILT-IN COMPILER DIRECTIVE (SEE GITHUB) -->
-    {{> $.tags }}
-    {{> $.styles }}
-    {{> views/tag-partials/font-awesome.partial.html }}
-    {{> $.scripts }}
+    {{> partials/meta/common-tags.partial.html }}
+    {{> partials/meta/meta-props.partial.html }}
+    {{{bundles model.shaman.bundles}}}
+    {{> partials/meta/font-awesome.partial.html }}
+    {{> partials/meta/google-analytics.partial.html }}
 </head>
 ```
 
-This is a great example of how Shaman Website Compiler leverages Handlebars. The first tag is a partial file that you can edit yourself, and is found in the folder 'views/meta-tags'. The second tag is an example of a tag that is built-in to Shaman Website Compiler; the compiler has certain optimizations built-in that allow developers to forget about the small things like script inclusion and minification and forcus on generating content. If you need more control over your header tags then you can simply delete this section and manually include any assets. 
+This is a great example of how Shaman Website Compiler leverages Handlebars. 4 of the 5 tags are partial files that you can edit yourself, and can be found in the folder 'src/partials/'. The third tag from the top is an example of a tag that is built-in to Shaman Website Compiler; the compiler has certain optimizations built-in that allow developers to forget about the small things like script inclusion and minification and forcus on generating content. If you need more control over your header tags then you can simply delete this section and manually include any assets. 
 
-Another thing you might notice about the starter kit is that each HTML file in the folder 'views' has a corresponding JSON file. These JSON files are automatically located by the compiler based on the file-names (must match!) and the data is injected into the template when it is compiling; this allows us to generate dynamic content based on the values provided in the JSON files. Below is a snippet from the file 'views/index.html', followed by a snippet of the file 'views/index.json':
+Another thing you might notice about the starter kit is that each HTML file in the folder 'arc/views' has a corresponding JSON file. These JSON files are automatically located by the compiler based on the file-names (must match!) and the data is injected into the template when it is compiling; this allows us to generate dynamic content based on the values provided in the JSON files. Below is a snippet from the file 'views/index.html', followed by a snippet of the file 'views/index.json':
 
 ```html
 ...
-    <h2>{{ sectionTitle }}</h2>
+    <h2>{{ model.sectionTitle }}</h2>
     <p>
-        {{{ sectionBody }}}
+        {{{ model.sectionBody }}}
     </p>
 ...
 ```
